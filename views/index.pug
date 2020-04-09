@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h1 #{title}
+    ul.list-group
+        each article in art
+            li.list-group-item id is 
+                a(href="/articles/add/"+article.id) #{article.id}
+            ol.list-group
+                li.list-group-item= article.title
+                li.list-group-item= article.body
+                li.list-group-item= article.Author
+            br
+                

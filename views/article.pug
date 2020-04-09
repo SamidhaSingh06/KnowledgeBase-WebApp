@@ -1,0 +1,15 @@
+extends layout
+
+block content
+
+    h1= art.title
+    h5 Written by #{author}
+    p= art.body
+    hr
+    if user
+        if user.id == art.author
+            a.btn.btn-info(href="/articles/edit/"+art._id) Edit
+            a.btn.btn-danger.delete(href="/", id= art._id) Delete
+    
+            form(action="/articles/"+art._id, method="post")
+                input.btn.btn-default(type='submit', value='DELETE')

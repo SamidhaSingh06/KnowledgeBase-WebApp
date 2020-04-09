@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    h1 #{title}
+    ul.list-group
+        each u in user
+            li.list-group-item username is 
+                a(href="#") #{u.username}
+            ol.list-group
+                li.list-group-item= u.name
+                li.list-group-item= u.email
+                li.list-group-item= u.password
+            br
